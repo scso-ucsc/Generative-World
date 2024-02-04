@@ -26,7 +26,7 @@ public class LootManager : MonoBehaviour
     {
         for(int i = 0; i < maxCoins; i++){
             Vector3 randomSpawnPoint = new Vector3(Random.Range(-40, 41), 2.5f, Random.Range(-40, 41));
-            GameObject coin = Instantiate(coinPrefab, randomSpawnPoint, Quaternion.Euler(90, 0, 0), coinParent); //Spawn coinPrefabs with 90 degree rotation; Assign parent to coinParent
+            GameObject coin = Instantiate(coinPrefab, randomSpawnPoint, Quaternion.Euler(0, Random.Range(-180, 181), -90), coinParent); //Spawn coinPrefabs with random y-axis rotation; Assign parent to coinParent
             coin.tag = "Coin"; //Setting tag
             coinList.Add(coin);
         }
