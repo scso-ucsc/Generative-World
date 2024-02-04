@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         controller = GetComponent<CharacterController>(); //Acquiring Player
         speedMovement = 10.0f;
-        speedRotation = 3.0f;
+        speedRotation = 1.0f;
     }
 
     // Update is called once per frame

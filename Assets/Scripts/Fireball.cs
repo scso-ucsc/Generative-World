@@ -25,7 +25,7 @@ public class Fireball : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; //Resetting velocity to 0 so that if active again, that force no longer applies
             this.gameObject.SetActive(false);
 
-            UIManager.instance.addScore(LootManager.instance.generateCoinValue());
+            UIManager.instance.addScore(LootManager.instance.generateCoinValue()); //Adding score to UI
         }
     }
 }
