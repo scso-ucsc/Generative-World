@@ -10,6 +10,7 @@ public class LootManager : MonoBehaviour
     private int maxCoins = 20;
     [SerializeField] private GameObject coinPrefab; //[SerializeField] lets the variable be accessible to Unity editor, but not public to the rest
     [SerializeField] private Transform coinParent;
+    private int[] coinValuesList = {10, 20, 30};
 
     void Awake()
     {
@@ -62,5 +63,10 @@ public class LootManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public int setCoinValue(){
+        int randomIndex = Random.Range(0, 3); //Generate random integer from 0 to 2
+        return coinValuesList[randomIndex];
     }
 }

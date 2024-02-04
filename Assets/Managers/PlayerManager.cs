@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     private CharacterController controller;
     [SerializeField] private float speedMovement;
     [SerializeField] private float speedRotation;
-    //private int coinsCollected = 0;
+    public int playerScore = 0;
 
     void Awake()
     {
