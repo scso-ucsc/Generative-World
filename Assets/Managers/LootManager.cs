@@ -37,8 +37,7 @@ public class LootManager : MonoBehaviour
         
     }
 
-    IEnumerator spawnCoin(){
-        //StartCoroutine(spawnCoin());
+    IEnumerator spawnCoin(){ // called via StartCoroutine(spawnCoin());
         yield return new WaitForSeconds(2f);
         Vector3 randomSpawnPoint = new Vector3(Random.Range(-40, 41), 2.5f, Random.Range(-40, 41));
         Instantiate(coinPrefab, randomSpawnPoint, Quaternion.Euler(90, 0, 0), coinParent); //Spawn coinPrefabs with 90 degree rotation; Assign parent to coinParent

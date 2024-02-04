@@ -10,6 +10,7 @@ public class AmmoManager : MonoBehaviour
     [SerializeField] private Transform fireBallParent;
     [SerializeField] private float fireSpeed = 1000;
     [SerializeField] private Transform fireBallSpawnpoint;
+    [SerializeField] private Transform playerPosition;
 
     void Awake()
     {
@@ -39,12 +40,11 @@ public class AmmoManager : MonoBehaviour
 
     public void Fire(){ //Needs to be public so other Managers can access them
         GameObject fireBallToSpawn = getFireBall();
-        if(fireBallToSpawn != null){
+        if(fireBallToSpawn != null){ //Based on Introduction To Object Pooling In Unity - https://www.youtube.com/watch?v=YCHJwnmUGDk
             fireBallToSpawn.transform.position = fireBallSpawnpoint.position;
-            fireBallToSpawn.transform.rotation = transform.rotation;
+            fireBallToSpawn.transform.rotation = playerPosition.transform.rotation; //Rotation needs to be reset too
             fireBallToSpawn.SetActive(true);
         }
-        //GameObject newFireBall = Instantiate(fireObj, fireballSpawnpoint.position, transform.rotation);
         fireBallToSpawn.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * fireSpeed);
     }
 
