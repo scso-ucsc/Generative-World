@@ -65,7 +65,7 @@ public class LootManager : MonoBehaviour
         return null;
     }
 
-    public int setCoinValue(){
+    public int generateCoinValue(){
         int randomIndex = Random.Range(0, 3); //Generate random integer from 0 to 2
         return coinValuesList[randomIndex];
     }
